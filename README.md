@@ -16,7 +16,7 @@ A [Glamorous Toolkit](https://gtoolkit.com/) MCP server for [Claude Code](https:
 
 ```st
 Metacello new
-	repository: 'github://dweinstein/mygtmcp:main/src';
+	repository: 'github://dweinstein/mygtmcp/src';
 	baseline: 'MyGtMcp';
 	load
 ```
