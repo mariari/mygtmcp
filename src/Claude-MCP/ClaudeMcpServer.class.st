@@ -351,7 +351,7 @@ ClaudeMcpServer >> addListPagesTool [
 					s nextPutAll: page uid asString; nextPutAll: ' | '; nextPutAll: page title; cr ] ] ])
 ]
 
-{ #category : 'tools' }
+{ #category : 'tools - lepiter' }
 ClaudeMcpServer >> addReadPageTool [
 	self addTool: (GtLlmFunctionTool new
 		name: 'readPage';
@@ -360,9 +360,9 @@ ClaudeMcpServer >> addReadPageTool [
 		block: [ :functionCall |
 			| db page |
 			db := LeDatabasesRegistry default defaultLogicalDatabase.
-			[ page := db pageNamed: functionCall anyArgument ]
-				on: Error
-				do: [ :e | page := nil ].
+			page := db pages 
+				detect: [ :p | p title = functionCall anyArgument ] 
+				ifNone: [ nil ].
 			page
 				ifNil: [ 'Page not found: ', functionCall anyArgument ]
 				ifNotNil: [
