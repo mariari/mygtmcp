@@ -1,6 +1,6 @@
 # MyGtMcp
 
-A [Glamorous Toolkit](https://gtoolkit.com/) MCP server for [Claude Code](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview). Exposes GT tools (evaluate, getMethodSource, getReferences, listPages, etc.) over MCP so Claude Code can interact with your live GT image.
+A [Glamorous Toolkit](https://gtoolkit.com/) MCP server for [Claude Code](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview)and OpenAI Codex. Exposes GT tools (evaluate, getMethodSource, getReferences, listPages, etc.) over MCP so Claude Code can interact with your live GT image.
 
 ## Screenshots
 
@@ -33,6 +33,12 @@ After installing with Metacello, you will be able to execute
 
 ```
 claude mcp add --transport http gtmcp http://localhost:3030
+```
+
+## Add to OpenAI Codex
+
+```
+codex mcp add gtmcp --url http://localhost:3030/mcp
 ```
 
 ## Warning
